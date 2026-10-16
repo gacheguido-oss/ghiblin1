@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghibli World | Catálogo de películas</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="encabezado">
+        <a href="#" class="logo">Ghibli<span>World</span></a>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#catalogo">Películas</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="hero-contenido">
+                <span class="etiqueta">UN UNIVERSO DE FANTASÍA</span>
+
+                <h1>Historias que<br><span>viven para siempre.</span></h1>
+
+                <p>
+                    Explora las películas de Studio Ghibli, descubre sus
+                    historias y encuentra tu próxima aventura.
+                </p>
+
+                <a href="#catalogo" class="boton-principal">
+                    Explorar películas
+                </a>
+            </div>
+        </section>
+
+        <section class="catalogo" id="catalogo">
+            <div class="titulo-seccion">
+                <div>
+                    <span class="subtitulo">NUESTRO UNIVERSO</span>
+                    <h2>Catálogo de películas</h2>
+                    <p>Descubre las obras que marcaron generaciones.</p>
+                </div>
+
+                <span class="contador" id="contador">Cargando...</span>
+            </div>
+
+            <div class="filtros">
+                <div class="buscador">
+                    <span class="icono-busqueda" aria-hidden="true"></span>
+
+                    <input
+                        type="search"
+                        id="busqueda"
+                        placeholder="Buscar película por título..."
+                        aria-label="Buscar película"
+                    >
+                </div>
+
+                <select id="filtroDirector" aria-label="Filtrar por director">
+                    <option value="">Todos los directores</option>
+                </select>
+
+                <select id="ordenar" aria-label="Ordenar películas">
+                    <option value="titulo">Ordenar por título</option>
+                    <option value="antiguas">Más antiguas primero</option>
+                    <option value="recientes">Más recientes primero</option>
+                </select>
+            </div>
+
+            <div id="estado" class="estado">
+                Cargando películas...
+            </div>
+
+            <div class="peliculas" id="peliculas"></div>
+        </section>
+    </main>
+
+    <footer>
+        <a href="#inicio" class="logo">Ghibli<span>World</span></a>
+
+        <p>Un pequeño homenaje al mundo de la animación japonesa.</p>
+
+        <a href="https://ghibliapi.vercel.app/" target="_blank"
+           rel="noopener noreferrer">
+            Datos proporcionados por Ghibli API
+        </a>
+    </footer>
+
+    <dialog id="modal" class="modal">
+        <button
+            class="cerrar"
+            id="cerrarModal"
+            aria-label="Cerrar ficha"
+        >&times;</button>
+
+        <div id="detalle"></div>
+    </dialog>
+
+</body>
+</html>
